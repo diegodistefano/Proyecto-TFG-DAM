@@ -1,0 +1,18 @@
+
+.uploader-card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.alert--error {
+  background-color: var(--color-error-bg);
+  color: var(--color-error-text);
+  padding: 12px; border-radius: 8px;
+}
+audio { width: 100%; }
