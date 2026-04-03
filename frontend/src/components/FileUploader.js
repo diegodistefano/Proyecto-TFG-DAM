@@ -4,6 +4,9 @@ import UploadDropZone from '../features/upload/components/UploadDropzone';
 import UploadActions from '../features/upload/components/UploadActions';
 import '../main.css';
 import UploadError from '../features/upload/components/UploadError';
+import AudioBadges from '../features/audio/components/AudioBadges';
+import AudioPlayer from '../features/audio/components/AudioPlayer';
+import AudioActions from '../features/audio/components/AudioActions';
 
 const MAX_SIZE_MB = 10;
 
@@ -54,30 +57,17 @@ export default function FileUploader() {
           <div className="result__header">
             <h2 className="result__title">Conversión completada</h2>
           </div>
-          <div className="result__badges">
-            <span className="badge badge--lang">
-              Idioma detectado:
-              {response.detectedLanguage}
-            </span>
-            {response.translated && (
-              <span className="badge badge--translated">Traducido de inles a español</span>
-            )}
-          </div>
-          <div className="result__audio">
-            <h3 className="result__audio-title">Reproducir audio</h3>
-            <audio controls src={response.audioUrl} className="audio-player" />
-          </div>
-          <div className="result__actions">
-            <a className="btn btn--success" href={response.audioUrl} download="pdf2voice-audio.mp3">
-              <span>Descargar MP3</span>
-            </a>
-            <button className="btn btn--secondary" onClick={handleReset}>
-              <span>Convertir otro PDF</span>
-            </button>
-            <button className="btn btn--secondary" onClick={handleReset}>
-              <span>Administrar audios</span>
-            </button>
-          </div>
+          <AudioBadges
+            detectedLanguage={response.detectedLanguage}
+            translated={response.translated}
+          />
+          <AudioPlayer
+            audioUrl={response.audioUrl}
+          />
+          <AudioActions
+            audioUrl={response.audioUrl}
+            onReset={handleReset}
+          />
         </div>
       )}
     </section>
