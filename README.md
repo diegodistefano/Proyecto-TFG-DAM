@@ -67,7 +67,7 @@ NODE_ENV=development
 Usa ese nombre:
 
 ```sql
-CREATE DATABASE pdf2voice;
+CREATE DATABASE pdfvoice_db;
 ```
 
 ### 5. Ejecutar migraciones de Prisma
