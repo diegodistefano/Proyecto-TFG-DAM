@@ -2,7 +2,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
+datasource pdfvoice_db {
   provider = "postgresql"
 }
 
